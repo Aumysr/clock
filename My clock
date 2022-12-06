@@ -1,0 +1,23 @@
+# my first clock in python -- import the package which using teh system's time
+from tkinter import*
+from time import strftime
+
+root = Tk()
+root.geometry("500x500")
+root.resizable(0,0)
+root.title('My First Python Clock')
+
+Label(root,text = 'Sydney Time Zone', font ='courier 15 bold').pack(side=BOTTOM)
+
+def time():
+    string = strftime('%H:%M:%S %p')
+    mark.config(text = string)
+    mark.after(1000, time)
+
+mark = Label(root,
+            font = ('courier', 40, 'bold italic'),
+            pady=200,
+            foreground = 'dark green')
+        
+mark.pack(anchor = 'center')
+time()
